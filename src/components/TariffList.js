@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState, useMemo } from 'react';
 import styled from 'styled-components';
 import Spin from 'antd/lib/spin';
 import StoreContext from '../store/context';
@@ -27,6 +27,7 @@ const List = styled.ul`
 `;
 
 function TariffList() {
+  const [sortBy, setSort] = useState('download');
   const { dispatch, list, status } = useContext(StoreContext);
 
   useEffect(() => {
@@ -43,16 +44,25 @@ function TariffList() {
     );
   }
 
+  const sortedData = useMemo(() => sortTariffList(list, sortBy), [
+    list,
+    sortBy
+  ]);
+
   return (
     <Container>
-      <Filters />
+      <Filters onSortChange={setSort} />
       <List>
-        {list.map((tariff, index) => (
+        {sortedData.map((tariff, index) => (
           <Tariff {...tariff} key={tariff.id} index={index} />
         ))}
       </List>
     </Container>
   );
+}
+
+function sortTariffList(arr, sortBy) {
+  return arr.sort((a, b) => b[sortBy] - a[sortBy]);
 }
 
 export default TariffList;
