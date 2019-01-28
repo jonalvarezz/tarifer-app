@@ -4,6 +4,8 @@ import Spin from 'antd/lib/spin';
 import StoreContext from '../store/context';
 import { setData } from '../store/actions';
 import { fetchData } from '../apis/api';
+
+import Filters from './TariffFilters';
 import Tariff from './Tariff';
 
 const Spinner = styled.div`
@@ -11,13 +13,17 @@ const Spinner = styled.div`
   padding: 60px 0;
 `;
 
-const List = styled.ul`
-  padding: 0;
+const Container = styled.div`
   width: 90%;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+`;
+
+const List = styled.ul`
   list-style: none;
+  padding: 0;
+  margin: 0;
 `;
 
 function TariffList() {
@@ -38,11 +44,14 @@ function TariffList() {
   }
 
   return (
-    <List>
-      {list.map((tariff, index) => (
-        <Tariff {...tariff} key={tariff.id} index={index} />
-      ))}
-    </List>
+    <Container>
+      <Filters />
+      <List>
+        {list.map((tariff, index) => (
+          <Tariff {...tariff} key={tariff.id} index={index} />
+        ))}
+      </List>
+    </Container>
   );
 }
 
