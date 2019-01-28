@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled from 'styled-components';
+import StoreContext from '../store/context';
+import { setData } from '../store/actions';
+import { fetchData } from '../apis/api';
 import Tariff from './Tariff';
 
 const List = styled.ul`
@@ -11,19 +14,19 @@ const List = styled.ul`
   list-style: none;
 `;
 
-const data = [
-  { item: 'asdf' },
-  { item: 'asdf' },
-  { item: 'asdf' },
-  { item: 'asdf' },
-  { item: 'asdf' }
-];
-
 function TariffList() {
+  const { dispatch, list } = useContext(StoreContext);
+
+  useEffect(() => {
+    fetchData().then(data => {
+      dispatch(setData(data));
+    });
+  }, []);
+
   return (
     <List>
-      {data.map((obj, index) => (
-        <Tariff key={obj.item} index={index} {...obj} />
+      {list.map((tariff, index) => (
+        <Tariff {...tariff} key={tariff.id} index={index} />
       ))}
     </List>
   );
