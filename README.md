@@ -30,14 +30,6 @@ cd tarifer-app
 yarn && yarn start
 ```
 
-## FAQ
-
-### I am not able to see the online demo.
-
-Since I am using the public, free and non-authenticated GitHub API, you may have reached the [rate limit](https://developer.github.com/v3/#rate-limiting). Try [running it locally](#run-it-locally) instead.
-
-Otherwise you can wait until the rate limit get reset. If you take a look to the DevTool's console you will get a hint on the remaining time.
-
 ## Available Scripts
 
 In the project directory, you can run:
