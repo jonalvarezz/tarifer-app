@@ -2,14 +2,16 @@ import React from 'react';
 import Store from '../store/store';
 import Header from './Header';
 import TariffList from './TariffList';
+import Footer from './Footer';
 
 function App() {
   return (
     <Store>
-      <div>
+      <React.Fragment>
         <Header />
         <TariffList />
-      </div>
+        <Footer />
+      </React.Fragment>
     </Store>
   );
 }
