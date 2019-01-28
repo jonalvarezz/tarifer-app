@@ -32,6 +32,10 @@ const Container = styled.div`
     white-space: nowrap;
     padding-right: 8px;
   }
+
+  .ant-input-search .anticon-close-circle {
+    padding-right: 5px;
+  }
 `;
 
 const propTypes = {
@@ -45,8 +49,9 @@ function TariffFilters({ onSortChange, onSearchChange }) {
       <Col>
         <Search
           placeholder="Search tariff name"
-          onSearch={value => console.log(value)}
+          onChange={({ target }) => onSearchChange(target.value)}
           style={{ width: '100%', minWidth: '100px' }}
+          allowClear
         />
       </Col>
       <Col>

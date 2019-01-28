@@ -28,6 +28,7 @@ const List = styled.ul`
 
 function TariffList() {
   const [sortBy, setSort] = useState('download');
+  const [searchBy, setSearchQuery] = useState('');
   const { dispatch, list, status } = useContext(StoreContext);
 
   useEffect(() => {
@@ -48,12 +49,13 @@ function TariffList() {
     list,
     sortBy
   ]);
+  const filteredData = useMemo(() => filterTariffList(sortedData, searchBy));
 
   return (
     <Container>
-      <Filters onSortChange={setSort} />
+      <Filters onSortChange={setSort} onSearchChange={setSearchQuery} />
       <List>
-        {sortedData.map((tariff, index) => (
+        {filteredData.map((tariff, index) => (
           <Tariff {...tariff} key={tariff.id} index={index} />
         ))}
       </List>
@@ -63,6 +65,11 @@ function TariffList() {
 
 function sortTariffList(arr, sortBy) {
   return arr.sort((a, b) => b[sortBy] - a[sortBy]);
+}
+
+function filterTariffList(arr, searchQuery) {
+  if (!searchQuery) return arr;
+  return arr.filter(tariff => tariff.name.indexOf(searchQuery) > -1);
 }
 
 export default TariffList;
