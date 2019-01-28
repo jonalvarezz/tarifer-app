@@ -12,10 +12,35 @@ const Container = styled.div`
   }
 `;
 
+const Logo = styled.h1`
+  font-size: 1.5rem;
+  margin: 0;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  color: #797979;
+`;
+
+const LogoShape = styled.span`
+  color: white;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 6px;
+    background: #ff8e00;
+    width: 25px;
+    height: 70%;
+    z-index: -1;
+    transform: translateX(-6px);
+  }
+`;
+
 function Header() {
   return (
     <Container>
-      <img src="verivox.png" alt="Verivox Logo" />
+      <Logo>
+        <LogoShape>T</LogoShape>arifer
+      </Logo>
     </Container>
   );
 }
