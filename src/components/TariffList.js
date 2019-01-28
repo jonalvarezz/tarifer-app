@@ -14,7 +14,7 @@ const Spinner = styled.div`
 const List = styled.ul`
   padding: 0;
   width: 90%;
-  max-width: 600px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
   list-style: none;
