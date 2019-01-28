@@ -1,4 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+✴️️ This is React application that list object using a fake API to play around with Hooks as `useReducer`, `useMemo`, `useContext`, `useState` and React Context, to create a familiar, flexible and yet powerful Redux-like state management without third-party libraries.
+
+[Try Online](https://jonalvarezz.github.io/tarifer-app)
+
+![alt Tarifer React App](./screenshot.png)
+
+## Technical Features
+
+- Styled componentes.
+- React Context + Hooks for Redux-like architecture.
+- React Hooks: useState, useEffect, useMemo, useContext to manage logic.
+- Antd library
+
+## UI Engineering Concepts
+
+- Use React built-ins to create an Redux-like state management architecture
+- Logic can be easily extracted, moved and shared thanks to React hooks.
+- Memoization to avoid unnecesary calculations after re renders.
+- Scoped CSS
+
+[More about the created Redux-like architecture](http://jonalvarezz.com/articles/replacing-redux-with-context-and-hooks/).
+
+## Run it locally
+
+Download, install, and run.
+
+```
+git clone git@github.com:jonalvarezz/tarifer-app.git
+cd tarifer-app
+yarn && yarn start
+```
+
+## FAQ
+
+### I am not able to see the online demo.
+
+Since I am using the public, free and non-authenticated GitHub API, you may have reached the [rate limit](https://developer.github.com/v3/#rate-limiting). Try [running it locally](#run-it-locally) instead.
+
+Otherwise you can wait until the rate limit get reset. If you take a look to the DevTool's console you will get a hint on the remaining time.
 
 ## Available Scripts
 
@@ -37,32 +75,4 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
