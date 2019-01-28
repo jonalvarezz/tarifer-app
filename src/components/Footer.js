@@ -5,7 +5,7 @@ const Container = styled.footer`
   position: fixed;
   bottom: 0;
   width: 100%
-  background: linear-gradient(to top, white 60%, transparent);
+  background: linear-gradient(to top, white 60%, rgba(255, 255, 255, 0));
   padding: 60px 0 10px;
   text-align: center
   font-weight: bold;
